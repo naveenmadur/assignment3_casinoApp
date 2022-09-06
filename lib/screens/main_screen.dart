@@ -1,3 +1,4 @@
+import 'package:casino_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:casino_app/screens/play_screen.dart';
 import 'package:casino_app/screens/history_screen.dart';
@@ -36,20 +37,8 @@ class _MainScreenState extends State<MainScreen> {
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.square_rounded,
-              size: 35,
-            ),
-            label: 'Play',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.square_rounded,
-              size: 35,
-            ),
-            label: 'History',
-          ),
+          play,
+          history,
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue,

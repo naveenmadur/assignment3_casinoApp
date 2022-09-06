@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:casino_app/provider/casino_class.dart';
 import 'package:provider/provider.dart';
 import 'package:casino_app/provider/history.dart';
+import 'package:casino_app/constants.dart';
 
 class PlayButton extends StatelessWidget {
   const PlayButton({
@@ -21,15 +22,9 @@ class PlayButton extends StatelessWidget {
               .addInList(ai, player, winner);
         },
         child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.indigoAccent[700],
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-          child: const Text(
-            'Play',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
+          decoration: playButtonBoxDecoration,
+          padding: playButtonPadding,
+          child: playButtonText,
         ));
   }
 }

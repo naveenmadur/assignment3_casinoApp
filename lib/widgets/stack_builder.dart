@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:casino_app/provider/casino_class.dart';
-import 'package:casino_app/provider/history.dart';
 import 'package:casino_app/widgets/circle_avatar.dart';
+import 'package:casino_app/constants.dart';
 
 class BuildStack extends StatelessWidget {
   const BuildStack({Key? key}) : super(key: key);
@@ -19,39 +19,29 @@ class BuildStack extends StatelessWidget {
       children: [
         Positioned(
           child: Container(
-            height: 400,
-            width: 250,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(200),
-              color: const Color(0xFFb0b9de),
-            ),
+            height: containerHeight,
+            width: containerWidth,
+            decoration: stackBuilderBoxDecoration,
             child:  Center(
               child:  Text(
                 winner,
                 textAlign: TextAlign.center,
-                style:
-                const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                style: containerTextStyle,
               ),
             ),
           ),
         ),
-        const Positioned(
-          top: -30,
-          child: CircleAvatarWidget(),
-        ),
-        const Positioned(
-          bottom: -30,
-          child: CircleAvatarWidget(),
-        ),
+        topCircleAvatarWidget,
+        bottomCircleAvatarWidget,
         Positioned(
           top: -20,
           left: -30,
-          child: Text('   AI \n\$$ai', style: const TextStyle(fontSize: 20),),
+          child: Text('   AI \n\$$ai', style: amountTextStyle,),
         ),
         Positioned(
           bottom: -30,
           right: -30,
-          child: Text('Player\n\$$player',style: const TextStyle(fontSize: 20),),
+          child: Text('Player\n\$$player',style: amountTextStyle,),
         ),
       ],
     );

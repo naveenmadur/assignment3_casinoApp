@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:casino_app/constants.dart';
 
 class CircleAvatarWidget extends StatelessWidget {
   const CircleAvatarWidget({
@@ -8,11 +9,11 @@ class CircleAvatarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CircleAvatar(
-      backgroundColor: Colors.black,
-      radius: 40,
+      backgroundColor: outerCircleAvatarColor,
+      radius: outerCircleAvatarRadius,
       child: CircleAvatar(
-        backgroundColor: Colors.white,
-        radius: 39,
+        backgroundColor: innerCircleAvatarColor,
+        radius: innerCircleAvatarRadius,
       ),
     );
   }
