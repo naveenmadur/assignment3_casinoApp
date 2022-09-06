@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:casino_app/widgets/history_tile.dart';
 import 'package:provider/provider.dart';
-import 'package:casino_app/models/history.dart';
+import 'package:casino_app/provider/history.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:casino_app/models/casino_class.dart';
-import 'package:casino_app/models/history.dart';
+import 'package:casino_app/provider/casino_class.dart';
+import 'package:casino_app/provider/history.dart';
 import 'package:casino_app/widgets/circle_avatar.dart';
 
 class BuildStack extends StatelessWidget {
-  final int ai, player;
-  const BuildStack({Key? key,required this.ai,required this.player}) : super(key: key);
+  const BuildStack({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var winner = Provider.of<Casino>(context).winnerText();
-    Provider.of<History>(context).addInList(ai, player, winner);
+    final casino = Provider.of<Casino>(context);
+    int player = casino.playerAmount;
+    int ai = casino.aiAmount;
     return Stack(
       alignment: AlignmentDirectional.topCenter,
       clipBehavior: Clip.none,

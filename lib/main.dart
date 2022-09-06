@@ -1,8 +1,8 @@
-import 'package:casino_app/models/history.dart';
+import 'package:casino_app/provider/history.dart';
 import 'package:flutter/material.dart';
 import 'package:casino_app/screens/main_screen.dart';
 import 'package:provider/provider.dart';
-import 'models/casino_class.dart';
+import 'provider/casino_class.dart';
 
 void main() {
   runApp(const MyApp());
